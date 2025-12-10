@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENDAFTARAN JOIN TEAM EVOS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a2a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(10, 10, 42, 0.8);
+            border: 2px solid #ff003c;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.5);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ff003c;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.7);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ff8a00;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ff8a00;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #ff003c;
+            box-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #ff003c, #ff8a00);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background: linear-gradient(to right, #ff8a00, #ff003c);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
+            transform: translateY(-2px);
+        }
+        
+        #halaman2 {
+            display: none;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://files.catbox.moe/zzhpyc.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        #prank-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff003c;
+            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+            margin-bottom: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ff003c;
+            max-width: 80%;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            text-align: center;
+            color: #ff8a00;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PENDAFTARAN JOIN TEAM EVOS</h1>
+        <form id="form-daftar">
+            <div class="form-group">
+                <label for="nama">Nama Anda</label>
+                <input type="text" id="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Alamat Email Anda</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telepon">Nomor telepon anda atau WhatsApp</label>
+                <input type="tel" id="telepon" required>
+            </div>
+            <button type="submit">DAFTAR</button>
+        </form>
+    </div>
+    
+    <div id="halaman2">
+        <p id="prank-text">Yahh Kena Prank Wkkwkw<br>Website Prank By @ Kyys Apeka</p>
+    </div>
+    
+    <audio id="audioPlayer" loop>
+        <source src="https://f.top4top.io/m_3548fj71a2.mp4" type="audio/mp4">
+    </audio>
+    
+    <div class="copyright">
+        © 2025 EVOS Esports - BY KYYS APEKA
+    </div>
+
+    <script>
+        document.getElementById('form-daftar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Tampilkan halaman 2
+            document.getElementById('halaman2').style.display = 'flex';
+            
+            // Putar audio
+            const audio = document.getElementById('audioPlayer');
+            audio.play();
+            
+            // Tambahkan efek berdenyut pada teks
+            document.getElementById('prank-text').classList.add('pulse');
+            
+            // Sembunyikan form
+            document.querySelector('.container').style.display = 'none';
+            document.querySelector('.copyright').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
